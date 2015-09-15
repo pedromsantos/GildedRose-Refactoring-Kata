@@ -2,39 +2,64 @@ namespace GildedRose
 {
     public class Item
     {
-        private const int MinimumQualityThresold = 0;
-
-        private const int MaximumQualityThresold = 50;
-
-        private const int DefaultQualityUpdate = 1;
-
-        public string Name { get; set; }
-
-        public int SellIn { get; set; }
-
-        public int Quality { get; set; }
-
-        public void IncreaseItemQuality(int qualityIncrease = DefaultQualityUpdate)
+        public Item(string name, int sellIn, int quality)
         {
-            Quality = Quality + qualityIncrease;
+            Name = name;
+            SellIn = sellIn;
+            Quality = quality;
+        }
 
-            if (Quality > MaximumQualityThresold)
+        public string Name { get; private set; }
+
+        public int SellIn { get; private set; }
+
+        public int Quality { get; private set; }
+
+        public bool IsBelowMaximumQuality()
+        {
+            return Quality < MaximumQuality;
+        }
+
+        private const int MaximumQuality = 50;
+
+        private const int MinimumQuality = 0;
+
+        public void SetQuantityToZero()
+        {
+            Quality = MinimumQuality;
+        }
+
+        public bool IsAboveMinimumQuaility()
+        {
+            return Quality > MinimumQuality;
+        }
+
+        public int ChangeSellIn()
+        {
+            return SellIn = SellIn - 1;
+        }
+
+        public bool HasPastSellByDay()
+        {
+            return SellIn < 0;
+        }
+
+        public void IncreaseQualityWhileBelowMaximumQuality()
+        {
+            if (IsBelowMaximumQuality())
             {
-                Quality = MaximumQualityThresold;
+                IncreaseQualiltyByOne();
             }
         }
 
-        public void DecreaseItemQuality(int qualityIncrease = DefaultQualityUpdate)
+        public void IncreaseQualiltyByOne()
         {
-            if (Name != "Sulfuras, Hand of Ragnaros")
-            {
-                Quality = Quality - qualityIncrease;
+            Quality++;
+        }
 
-                if (Quality < MinimumQualityThresold)
-                {
-                    Quality = MinimumQualityThresold;
-                }
-            }
+        public void DecreaseQualiltyByOne()
+        {
+            Quality--;
         }
     }
 }
