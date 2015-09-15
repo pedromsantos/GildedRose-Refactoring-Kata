@@ -14,8 +14,8 @@ I wrote this article ["Writing Good Tests for the Gilded Rose Kata"](http://codi
 
 The simplest way is to just clone the code and start hacking away improving the design. You'll want to look at the ["Gilded Rose Requirements"](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/GildedRoseRequirements.txt) which explains what the code is for. I strongly advise you that you'll also need some tests if you want to make sure you don't break the code while you refactor.
 
-You could write some unit tests yourself, using the requirements to identify suitable test cases. I've provided a failing unit test in a popular test framework as a starting point for most languages.
+You could write some unit tests yourself, using the requirements to identify suitable test cases.
 
-Alternatively, use the "Text-Based" tests provided in this repository. (Read more about that in the next section)
+I have included a golden master test aproach, if you wnat to use this uncomment and unignore the GenerateGoldenMaster tests and execute them to generate your Golden Master, tehen comment again to avoid regenerating the Golden Master again and again.
 
 Whichever testing approach you choose, the idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice designing tests, taking small steps, running the tests often, and incrementally improving the design. 
