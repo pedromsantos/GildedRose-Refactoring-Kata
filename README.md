@@ -16,6 +16,6 @@ The simplest way is to just clone the code and start hacking away improving the 
 
 You could write some unit tests yourself, using the requirements to identify suitable test cases.
 
-I have included a golden master test aproach, if you wnat to use this uncomment and unignore the GenerateGoldenMaster tests and execute them to generate your Golden Master, tehen comment again to avoid regenerating the Golden Master again and again.
+I have included a golden master test aproach, if you want to use this uncomment and unignore the GenerateGoldenMaster tests and execute them to generate your Golden Master, tehen comment again to avoid regenerating the Golden Master again and again.
 
 Whichever testing approach you choose, the idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice designing tests, taking small steps, running the tests often, and incrementally improving the design. 
